@@ -1,0 +1,2 @@
+#!/bin/bash
+find ~/temp/ -empty -print '%f\n'
