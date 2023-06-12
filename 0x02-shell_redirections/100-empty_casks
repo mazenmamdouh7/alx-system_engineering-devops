@@ -1,2 +1,2 @@
 #!/bin/bash
-find ~/temp/ -empty -print '%f\n'
+find . -empty -print '%f\n'
