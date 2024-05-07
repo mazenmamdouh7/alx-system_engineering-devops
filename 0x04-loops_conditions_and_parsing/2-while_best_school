@@ -2,8 +2,8 @@
 #while loop displays Best School 10 times.
 
 counter = 0
-while [$counter lt 10]
+while [$counter -lt 10]
 do
 	echo "Best School"
-	counter += 1
+	$counter += 1
 done
