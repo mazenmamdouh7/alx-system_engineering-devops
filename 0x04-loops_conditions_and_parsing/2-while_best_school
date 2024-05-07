@@ -1,11 +1,9 @@
 #!/usr/bin/env bash
+# Displays 'Best School' in stdout 10 times using a while loop
 
-# Initialize the counter
 COUNTER=1
-# Use a while loop to display "Best School" 10 times
 while [ $COUNTER -le 10 ]
 do
     echo "Best School"
-    # Increment the counter
     let COUNTER=COUNTER+1
 done
