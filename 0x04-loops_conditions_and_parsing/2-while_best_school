@@ -2,8 +2,10 @@
 # displays Best School 10 times.
 
 COUNTER=1
+# Use a while loop to display "Best School" 10 times
 while [ $COUNTER -le 10 ]
 do
     echo "Best School"
+    # Increment the counter
     let COUNTER=COUNTER+1
 done
