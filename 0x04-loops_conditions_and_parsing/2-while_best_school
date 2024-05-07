@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 #while loop displays Best School 10 times.
 
-counter = 0
+counter=0
 while [$counter -lt 10]
 do
 	echo "Best School"
-	counter=$(($counter+1))
+	let counter=$counter+1
 done
