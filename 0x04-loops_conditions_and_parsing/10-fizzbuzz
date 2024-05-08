@@ -4,8 +4,8 @@
 # Displays Fizz when the number is multiple of 3.
 # Displays Buzz when the number is a multiple of 5.
 
-
-while [ num -lt 101 ]
+num=1
+while [ $num -lt 101 ]
 do
 	if (( num % 3 == 0 && num % 5 == 0 ))
 	then
@@ -18,6 +18,6 @@ do
 		echo "Buzz"
 	else
 		echo "$num"
-	(( $num++ ))
 	fi
+	(( num++ ))
 done
