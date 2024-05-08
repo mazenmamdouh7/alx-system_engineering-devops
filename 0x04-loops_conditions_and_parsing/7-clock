@@ -3,7 +3,7 @@
 
 Hours=0
 
-while [ $Hours -lt 12 ]
+while [ $Hours -le 12 ]
 do
 	echo "Hour: $Hours"
 	minutes=1
