@@ -11,6 +11,6 @@ do
 		echo "$minutes"
 		(($minutes++))
 	done
-	echo "Hour: 1"
+	echo "Hour: $Hours"
 	(($Hours++))
 done
