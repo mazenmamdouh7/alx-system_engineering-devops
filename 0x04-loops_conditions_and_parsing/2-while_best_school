@@ -6,5 +6,5 @@ COUNTER=1
 while [ $COUNTER -le 10 ]
 do
     echo "Best School"
-    let COUNTER=COUNTER+1
+    COUNTER=$((COUNTER + 1))
 done
