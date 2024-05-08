@@ -2,7 +2,6 @@
 # until loop displays Best School 10 times.
 
 counter=0
-
 until [ $counter -eq 10 ]
 do
 	echo "Best School"
