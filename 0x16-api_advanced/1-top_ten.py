@@ -1,22 +1,42 @@
 #!/usr/bin/python3
-"""Contains top_ten function"""
+"""Function to print hot posts on a given Reddit subreddit."""
 import requests
 
-
 def top_ten(subreddit):
-    """Print the titles of the 10 hottest posts on a given subreddit."""
-    url = "https://www.reddit.com/r/{}/hot/.json".format(subreddit)
-    headers = {
-        "User-Agent": "0x16-api_advanced:project:\
-v1.0.0 (by /u/firdaus_cartoon_jr)"
-    }
-    params = {
-        "limit": 10
-    }
-    response = requests.get(url, headers=headers, params=params,
-                            allow_redirects=False)
-    if response.status_code == 404:
-        print("None")
+    # Define the base URL
+    url = f"https://www.reddit.com/r/{subreddit}/hot.json"
+
+    # Set the headers to avoid Too Many Requests error
+    headers = {'User-Agent': 'Mozilla/5.0'}
+
+    # Define the parameters for limiting the number of posts
+    params = {'limit': 10}
+
+    # Make the API request
+    response = requests.get(url, headers=headers, params=params)
+
+    # Check if the subreddit is valid
+    if response.status_code != 200:
+        print(None)
         return
-    results = response.json().get("data")
-    [print(c.get("data").get("title")) for c in results.get("children")]
+
+    # Parse the JSON response
+    data = response.json()
+
+    # Extract the list of hot posts
+    posts = data.get('data', {}).get('children', [])
+    if not posts:
+        print(None)
+        return
+
+    # Print the titles of the first 10 hot posts
+    for post in posts:
+        print(post.get('data', {}).get('title'))
+
+# Example usage:
+if __name__ == "__main__":
+    import sys
+    if len(sys.argv) < 2:
+        print("Please pass an argument for the subreddit to search.")
+    else:
+        top_ten(sys.argv[1])
